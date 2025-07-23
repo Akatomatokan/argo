@@ -9,20 +9,6 @@ Trieの構築やfail遷移、検索過程などをブラウザ上で直感的に
 - 入力テキストを走査し、一致するキーワードを検出
 - 検索ステップの視覚化（SVGで構造表示）
 
-本ツールは情報科学・アルゴリズム教育・編入試験対策などを目的として開発されました。
-
-##  ディレクトリ構成
-
-aho-corasick-visualizer/
-├── index.html # メインページ
-├── style.css # スタイル
-├── automaton.js # オートマトン構築と検索
-└── script.js # UI操作とSVG描画制御
-
-markdown
-コピーする
-編集する
-
 ## 使用技術
 
 - HTML / CSS / JavaScript
