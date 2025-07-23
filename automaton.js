@@ -5,6 +5,8 @@ class Node {
     this.children = {};
     this.fail = null;
     this.output = [];
+    this.x = 0;
+    this.y = 0;
   }
 }
 
@@ -12,13 +14,16 @@ class AhoCorasick {
   constructor() {
     this.root = new Node(0, '');
     this.nodeCount = 1;
+    this.nodes = [this.root];
   }
 
   addKeyword(word) {
     let node = this.root;
     for (const ch of word) {
       if (!node.children[ch]) {
-        node.children[ch] = new Node(this.nodeCount++, ch);
+        const newNode = new Node(this.nodeCount++, ch);
+        node.children[ch] = newNode;
+        this.nodes.push(newNode);
       }
       node = node.children[ch];
     }
@@ -36,11 +41,9 @@ class AhoCorasick {
       const current = queue.shift();
       for (const [ch, child] of Object.entries(current.children)) {
         let f = current.fail;
-        while (f && !f.children[ch]) {
-          f = f.fail;
-        }
+        while (f && !f.children[ch]) f = f.fail;
         child.fail = f ? f.children[ch] : this.root;
-        child.output = child.output.concat(child.fail.output);
+        child.output = [...child.output, ...child.fail.output];
         queue.push(child);
       }
     }
