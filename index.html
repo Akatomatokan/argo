@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラゲール法の可視化</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #4a69bd;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ラゲール法（Laguerre's Method）の可視化</h1>
+
+        <div class="section">
+            <h2>はじめに</h2>
+            <p>
+                このWebサイトでは、「ミスラグリース法」としてお問い合わせいただいた内容について、最も関連性の高い数値計算法である「ラゲール法（Laguerre's Method）」の可視化を行います。ラゲール法は、多項式の根（解）を非常に高速に見つけるための強力な反復法です。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>ラゲール法とは</h2>
+            <p>
+                ラゲール法は、多項式 $P(x)$ の根を数値的に探索するアルゴリズムの一つです。ニュートン法などと比較しても、しばしば非常に速い収束性（3次収束）を持つことで知られています。この方法は、多項式とその1階および2階の導関数を利用して、現在の推測値から次のより良い推測値を計算します。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>可視化された例：$f(x) = x^3 - 6x^2 + 11x - 6$</h2>
+            <p>
+                ここでは、$f(x) = x^3 - 6x^2 + 11x - 6 = (x-1)(x-2)(x-3)$ という多項式を例にとり、その根（$x=1, 2, 3$）をラゲール法で探索する過程を可視化します。初期推測値は $0.5$ としました。
+            </p>
+            <h3>1. 反復経路の可視化</h3>
+            <p>
+                以下のグラフは、多項式 $f(x)$ の形状と、初期推測値から根へとどのように反復計算が進んでいくかを示しています。赤い点と線が、各反復ステップにおける推測値の位置を示しており、根の一つ（この場合は $x=1$）に収束していく様子をご覧いただけます。
+            </p>
+            <img src="laguerre_method_visualization.png" alt="ラゲール法の反復経路の可視化">
+            <p style="text-align: center; font-size: 0.9em; color: #555;">図1: ラゲール法による根の探索経路</p>
+        </div>
+
+        <div class="section">
+            <h3>2. 収束の様子</h3>
+            <p>
+                こちらのグラフは、反復回数に対する連続する推測値の絶対変化量（$|x_{k+1} - x_k|$）を対数スケールでプロットしたものです。グラフの縦軸が急激に減少していることから、ラゲール法が非常に速く根に収束していく様子が確認できます。
+            </p>
+            <img src="laguerre_method_convergence.png" alt="ラゲール法の収束の様子">
+            <p style="text-align: center; font-size: 0.9em; color: #555;">図2: ラゲール法の収束の様子（対数スケール）</p>
+        </div>
+
+        <div class="section">
+            <h2>まとめ</h2>
+            <p>
+                ラゲール法は、多項式の根を効率的かつ高速に発見するための強力なツールであり、その収束の速さは可視化からも明らかになりました。このような数値計算法は、科学技術計算の様々な分野で利用されています。
+            </p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 AI Geminiによる生成</p>
+        </footer>
+    </div>
+</body>
+</html>
