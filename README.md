@@ -31,7 +31,7 @@ markdown
 
 ##  使い方
 
-1. `index.html` をブラウザで開く。ないし　https://akatomatokan.github.io/argo/　
+1. `index.html` をブラウザで開く。ないしhttps://akatomatokan.github.io/argo/
 2. キーワードを1行ずつ入力
 3. テキストを入力して「検索」ボタンを押す
 4. 結果とTrie構造、Failリンクが表示されます
